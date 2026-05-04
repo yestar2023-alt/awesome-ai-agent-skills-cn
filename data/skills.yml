@@ -1,0 +1,488 @@
+- id: superpowers
+  name: obra/superpowers
+  repo_url: https://github.com/obra/superpowers
+  category: workflow
+  recommendation: highly_recommended
+  agents:
+    - Claude Code
+    - Codex
+    - Cursor
+    - Gemini CLI
+    - OpenCode
+    - GitHub Copilot CLI
+  install:
+    claude: "/plugin install superpowers@claude-plugins-official"
+    codex: "在 Codex App 的 Plugins 侧边栏搜索 Superpowers 并安装"
+    cursor: "/add-plugin superpowers"
+    gemini: "gemini extensions install https://github.com/obra/superpowers"
+  best_for:
+    - 多文件功能开发
+    - 先讨论和计划再执行
+    - TDD、系统化 debugging、code review 闭环
+  avoid_when:
+    - 单行小改动
+    - 不想引入完整流程约束
+  highlights:
+    - 完整软件开发方法论，而不只是单个 prompt
+    - 通过 brainstorming、worktree、TDD、review 等 skills 限制 agent 乱写
+    - 支持多个 coding agent 和插件安装方式
+  cautions:
+    - 对小任务偏重，可能增加交互成本
+    - 团队采用前需要先约定 worktree 和 review 习惯
+  evidence:
+    - README 提供多平台安装和基础工作流
+    - 社区讨论中常被用作结构化 agent 开发流程案例
+  license: See repository
+  last_checked: "2026-05-05"
+
+- id: mattpocock-skills
+  name: mattpocock/skills
+  repo_url: https://github.com/mattpocock/skills
+  category: engineering
+  recommendation: highly_recommended
+  agents:
+    - Claude Code
+    - Codex
+    - Cursor
+    - Agents supporting Agent Skills
+  install:
+    npx: "npx skills@latest add mattpocock/skills/to-prd"
+    manual: "按需安装 repo 中的单个 skill，例如 tdd、diagnose、grill-me、to-prd"
+  best_for:
+    - 日常工程规划
+    - TDD 和 bug 诊断
+    - PRD、issue、架构改进和 git guardrails
+  avoid_when:
+    - 需要官方技术栈规则而不是通用工程方法
+  highlights:
+    - 小而清晰，适合按需安装
+    - 覆盖需求澄清、TDD、debug、issue/PRD 产出等高频动作
+    - 作者是 TypeScript 社区知名工程教育者，工程表达克制
+  cautions:
+    - 个人技能目录属性较强，不是完整团队平台
+    - 不同 skill 的成熟度需要逐个查看
+  evidence:
+    - README 列出每个 skill 的用途和 npx 安装方式
+    - 社区反馈常提到 grill-me、tdd、diagnose 等流程有实际帮助
+  license: See repository
+  last_checked: "2026-05-05"
+
+- id: compound-engineering
+  name: EveryInc/compound-engineering-plugin
+  repo_url: https://github.com/EveryInc/compound-engineering-plugin
+  category: workflow
+  recommendation: highly_recommended
+  agents:
+    - Claude Code
+    - Codex
+    - Cursor
+    - OpenCode
+    - Gemini CLI
+    - GitHub Copilot
+    - Windsurf
+  install:
+    claude: "/plugin marketplace add EveryInc/compound-engineering-plugin; /plugin install compound-engineering"
+    codex: "bunx @every-env/compound-plugin install compound-engineering --to codex"
+    cursor: "/add-plugin compound-engineering"
+  best_for:
+    - 团队工程流程
+    - 长期项目知识沉淀
+    - 计划、执行、review、复盘的闭环
+  avoid_when:
+    - 只想安装几个独立 skill
+    - 不希望 agent 生成和维护额外工程记录
+  highlights:
+    - Brainstorm -> Plan -> Work -> Review -> Compound -> Repeat 的清晰流程
+    - 强调把每次工程经验沉淀成以后可复用的资产
+    - 官方插件支持跨 agent 转换
+  cautions:
+    - 流程感强，轻量项目会显得重
+    - 需要团队接受文档化和复盘习惯
+  evidence:
+    - README 提供 Claude、Codex、Cursor、Gemini、OpenCode 等安装路径
+    - 仓库维护活跃，有版本发布和插件化结构
+  license: See repository
+  last_checked: "2026-05-05"
+
+- id: gstack
+  name: garrytan/gstack
+  repo_url: https://github.com/garrytan/gstack
+  category: workflow
+  recommendation: situational
+  agents:
+    - Claude Code
+    - Codex
+    - OpenClaw
+  install:
+    claude: "git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup"
+    team_mode: "从 gstack checkout 运行 ./setup --team，并在团队确认后提交 .claude/ 和 CLAUDE.md 变更"
+  best_for:
+    - founder 或技术负责人想用 agent 模拟产品、工程、设计、QA 多角色审查
+    - Web 产品需要浏览器 QA、release、security review 等 slash command
+  avoid_when:
+    - 不想修改 CLAUDE.md 或引入强势团队流程
+    - 项目没有浏览器 QA 或多角色 review 需求
+  highlights:
+    - /office-hours、/plan-eng-review、/review、/qa、/ship、/cso 等角色化命令完整
+    - 浏览器 QA 和产品/设计/工程 review 场景很具体
+    - 作者公开重度使用，传播和讨论度高
+  cautions:
+    - 安装脚本和 team mode 较有侵入性，使用前应审查 setup、scripts、telemetry 和自动更新行为
+    - 宣传叙事强，建议先个人试用核心命令再决定团队采用
+  evidence:
+    - README 提供 quick start、安装命令和 team mode 说明
+    - 公开讨论中评价两极，但 /qa、/browse、/review 等能力被认为有实际价值
+  license: MIT
+  last_checked: "2026-05-05"
+
+- id: vercel-agent-skills
+  name: vercel-labs/agent-skills
+  repo_url: https://github.com/vercel-labs/agent-skills
+  category: frontend
+  recommendation: highly_recommended
+  agents:
+    - Claude Code
+    - Codex
+    - Cursor
+    - Agents supporting Agent Skills
+  install:
+    npx: "npx skills add vercel-labs/agent-skills"
+  best_for:
+    - React 和 Next.js 性能优化
+    - UI code review
+    - bundle size、data fetching、render 性能检查
+  avoid_when:
+    - 非 React/Next.js 项目
+    - 只需要通用 UI 文案建议
+  highlights:
+    - Vercel 官方工程规则，覆盖 React/Next.js performance 和 web design guidelines
+    - 规则具体，适合 review 组件、页面和数据获取策略
+    - 通过 npx skills 安装，兼容多 agent 目录
+  cautions:
+    - 技术栈相关性很强，后端或移动项目收益有限
+    - vercel-deploy 相关 skill 涉及部署权限，使用前应确认账号和项目边界
+  evidence:
+    - README 列出 react-best-practices、web-design-guidelines、vercel-deploy-claimable 等 skills
+    - 官方仓库维护活跃，安装方式明确
+  license: MIT
+  last_checked: "2026-05-05"
+
+- id: supabase-agent-skills
+  name: supabase/agent-skills
+  repo_url: https://github.com/supabase/agent-skills
+  category: database
+  recommendation: highly_recommended
+  agents:
+    - Claude Code
+    - Codex
+    - Cursor
+    - GitHub Copilot
+    - Cline
+    - Agents supporting Agent Skills
+  install:
+    npx: "npx skills add supabase/agent-skills"
+    specific: "npx skills add supabase/agent-skills --skill supabase-postgres-best-practices"
+    claude: "claude plugin marketplace add supabase/agent-skills; claude plugin install postgres-best-practices@supabase-agent-skills"
+  best_for:
+    - Supabase Auth、RLS、SSR、Edge Functions、Realtime、Storage
+    - Postgres schema、query、index 和连接池优化
+  avoid_when:
+    - 完全不使用 Supabase 或 Postgres
+  highlights:
+    - Supabase 官方维护，覆盖产品用法和 Postgres best practices
+    - 对 RLS、Auth、迁移、安全审计、性能排查尤其有用
+    - 可只安装 postgres best practices
+  cautions:
+    - 不能替代数据库审计或生产变更评审
+    - Agent 生成迁移前仍需人工检查数据破坏风险
+  evidence:
+    - README 提供全量和单 skill 安装命令
+    - 官方文档指向 Supabase AI Skills
+  license: MIT
+  last_checked: "2026-05-05"
+
+- id: expo-skills
+  name: expo/skills
+  repo_url: https://github.com/expo/skills
+  category: mobile
+  recommendation: recommended
+  agents:
+    - Claude Code
+    - Cursor
+    - Agents supporting Agent Skills
+  install:
+    claude: "/plugin marketplace add expo/skills; /plugin install expo"
+    any_agent: "bunx skills add expo/skills"
+  best_for:
+    - Expo 应用开发
+    - EAS build、部署、debug
+    - Expo Router、UI、数据请求等项目问题
+  avoid_when:
+    - 非 Expo 的纯 Web 或原生项目
+  highlights:
+    - Expo 官方团队维护
+    - 覆盖构建、部署、debug 和 Expo 项目常见问题
+    - 支持 Claude Code plugin 和通用 skills 安装
+  cautions:
+    - README 提到主要在 Expo 内部用 Claude Code，并针对 Opus 模型调优
+    - 其他 agent 可用，但效果需要项目内验证
+  evidence:
+    - README 提供 Claude Code、Cursor、通用 agent 安装方式
+    - 官方仓库，有 MIT 许可证
+  license: MIT
+  last_checked: "2026-05-05"
+
+- id: callstack-agent-skills
+  name: callstackincubator/agent-skills
+  repo_url: https://github.com/callstackincubator/agent-skills
+  category: mobile
+  recommendation: recommended
+  agents:
+    - Claude Code
+    - Codex
+    - Cursor
+    - Gemini CLI
+    - OpenCode
+  install:
+    codex: "git clone https://github.com/callstackincubator/agent-skills.git && cp -r agent-skills/skills/* .codex/skills/"
+    gemini: "gemini skills install https://github.com/callstackincubator/agent-skills.git"
+    cursor: "在 Cursor Rules 中导入 https://github.com/callstackincubator/agent-skills.git"
+  best_for:
+    - React Native 性能优化
+    - React Native 升级
+    - 移动端 GitHub Actions 和 PR 工作流
+  avoid_when:
+    - 非 React Native 项目
+  highlights:
+    - Callstack 生态经验，聚焦 React Native 优化和升级
+    - README 给出 Codex、Cursor、Gemini、OpenCode 等安装路径
+    - 包含 react-native-best-practices、upgrading-react-native、github-actions 等技能
+  cautions:
+    - incubator 仓库，具体 skill 仍需随 React Native 版本验证
+    - 某些安装方式需要手动复制目录
+  evidence:
+    - README 明确列出 available skills 和多 agent 安装方式
+    - 适合与 Expo 官方 skills 互补
+  license: See repository
+  last_checked: "2026-05-05"
+
+- id: softaworks-agent-toolkit
+  name: softaworks/agent-toolkit
+  repo_url: https://github.com/softaworks/agent-toolkit
+  category: engineering
+  recommendation: recommended
+  agents:
+    - Claude Code
+    - Codex
+    - Cursor
+    - Agents supporting Agent Skills
+  install:
+    npx: "npx skills add softaworks/agent-toolkit"
+    claude: "/plugin marketplace add softaworks/agent-toolkit"
+  best_for:
+    - 日常工程小工具
+    - README、架构图、依赖升级、session handoff、skill 质量检查
+  avoid_when:
+    - 只想安装官方技术栈规则
+    - 不愿逐个筛选大量小工具
+  highlights:
+    - 覆盖 development、documentation、planning、professional workflows
+    - 可 cherry-pick commit-work、dependency-updater、session-handoff、c4-architecture 等
+    - README 同时列出 skills、agents、slash commands
+  cautions:
+    - 质量和适配度需要按 skill 单独判断
+    - Claude Code agents 和 commands 不一定能直接迁移到所有工具
+  evidence:
+    - README 提供 npx skills 和 Claude plugin marketplace 安装方式
+    - 适合作为实用 skill 灵感库
+  license: MIT
+  last_checked: "2026-05-05"
+
+- id: marketingskills
+  name: coreyhaines31/marketingskills
+  repo_url: https://github.com/coreyhaines31/marketingskills
+  category: content
+  recommendation: recommended
+  agents:
+    - Claude Code
+    - Codex
+    - Cursor
+    - Agents supporting Agent Skills
+  install:
+    npx: "npx skills add coreyhaines31/marketingskills"
+    specific: "npx skills add coreyhaines31/marketingskills --skill page-cro copywriting"
+    claude: "/plugin marketplace add coreyhaines31/marketingskills; /plugin install marketing-skills"
+  best_for:
+    - SaaS 营销页文案
+    - CRO、SEO、A/B test、cold email、launch strategy
+    - 技术创始人让 coding agent 协助增长工程
+  avoid_when:
+    - 需要严肃品牌策略或法律审查
+    - 没有产品定位和客户研究材料
+  highlights:
+    - 覆盖 copywriting、page-cro、ai-seo、content-strategy、analytics-tracking 等营销任务
+    - 支持全量或按 skill 安装
+    - 对技术营销和 founder 场景很实用
+  cautions:
+    - 输出仍需结合真实客户研究和品牌语气人工修订
+    - 市场、广告和 SEO 建议存在时效性，执行前要二次验证
+  evidence:
+    - README 列出大量营销 skills、分类和安装方式
+    - Skills 目录站点显示多个单 skill 有较高安装量
+  license: MIT
+  last_checked: "2026-05-05"
+
+- id: openai-skills
+  name: openai/skills
+  repo_url: https://github.com/openai/skills
+  category: official-reference
+  recommendation: reference_only
+  agents:
+    - Codex
+  install:
+    codex: "$skill-installer gh-address-comments"
+    github_url: "$skill-installer install https://github.com/openai/skills/tree/main/skills/.experimental/create-plan"
+  best_for:
+    - 学习 Codex skills 标准结构
+    - 安装 OpenAI curated 或 experimental skills
+    - 参考文档、表格、演示文稿等官方 skill 实现
+  avoid_when:
+    - 需要跨工具插件市场
+  highlights:
+    - OpenAI 官方 Codex skills catalog
+    - 包含 system、curated、experimental 等不同层级
+    - README 明确说明通过 $skill-installer 安装
+  cautions:
+    - 单个 skill 的许可证可能在各自目录中，不能假设整个 repo 一种许可证
+    - experimental skills 需要额外验证
+  evidence:
+    - README 说明 Agent Skills 定义、Codex 用法和安装方式
+    - 官方仓库，适合做实现参考
+  license: Per skill
+  last_checked: "2026-05-05"
+
+- id: anthropics-skills
+  name: anthropics/skills
+  repo_url: https://github.com/anthropics/skills
+  category: official-reference
+  recommendation: reference_only
+  agents:
+    - Claude Code
+    - Claude.ai
+    - Claude API
+  install:
+    claude: "/plugin marketplace add anthropics/skills; /plugin install document-skills@anthropic-agent-skills"
+    example: "/plugin install example-skills@anthropic-agent-skills"
+  best_for:
+    - 学习 Agent Skills 规范和模板
+    - 文档、PDF、PPTX、XLSX 等复杂 skill 参考
+    - Claude 平台 skills 使用和开发
+  avoid_when:
+    - 想直接找大量工程技术栈 rules
+  highlights:
+    - Anthropic 官方公开的 skills、spec 和 template
+    - 包含 document skills 和 creative/development/enterprise 示例
+    - 适合学习高复杂度 skill 的组织方式
+  cautions:
+    - README 明确说明部分 document skills 是 source-available，不全是开源
+    - 示例性质强，关键任务前要自己测试
+  evidence:
+    - README 提供 Claude Code marketplace 安装和 skill template 示例
+    - 官方仓库，是 Agent Skills 生态重要参考
+  license: Mixed; see repository
+  last_checked: "2026-05-05"
+
+- id: alirezarezvani-claude-skills
+  name: alirezarezvani/claude-skills
+  repo_url: https://github.com/alirezarezvani/claude-skills
+  category: discovery
+  recommendation: caution
+  agents:
+    - Claude Code
+    - Codex
+    - Gemini CLI
+    - Cursor
+    - OpenCode
+    - Windsurf
+  install:
+    claude: "/plugin marketplace add alirezarezvani/claude-skills"
+    codex: "npx agent-skills-cli add alirezarezvani/claude-skills --agent codex"
+  best_for:
+    - 找特定领域 skill 灵感
+    - 安全、Playwright、MCP、数据库、营销等单项参考
+  avoid_when:
+    - 想无脑全量安装
+    - 对脚本和权限没有审查时间
+  highlights:
+    - 覆盖工程、产品、营销、合规、C-level 等大量领域
+    - README 提供多工具安装和转换路径
+    - 部分 skill 主题很适合作为模板参考
+  cautions:
+    - 数量极大，质量和维护深度需要逐项验证
+    - 包含大量脚本，安装前要审查 scripts 和插件权限
+  evidence:
+    - README 声称提供数百个 skills、plugins、personas、commands
+    - 适合作为发现目录而不是默认精选安装
+  license: MIT
+  last_checked: "2026-05-05"
+
+- id: daymade-claude-code-skills
+  name: daymade/claude-code-skills
+  repo_url: https://github.com/daymade/claude-code-skills
+  category: discovery
+  recommendation: situational
+  agents:
+    - Claude Code
+  install:
+    github: "查看 README 的 Quick Installation 和单个 skill 文档后按需安装"
+  best_for:
+    - GitHub ops、Cloudflare troubleshooting、QA、promptfoo evaluation、Terraform、i18n 等特定任务
+    - 想研究 skill-creator 的生产化改造
+  avoid_when:
+    - 需要跨 Codex/Cursor/Gemini 的成熟安装路径
+  highlights:
+    - 包含几十个面向 Claude Code 的生产工作流 skill
+    - 每个 skill 通常包含 SKILL.md、scripts、references 或 assets
+    - 有中文用户指南和 demo 展示
+  cautions:
+    - 公共反馈和可信度信号弱于官方技术栈 skills
+    - 建议单个 skill 审查后再安装
+  evidence:
+    - README 描述 professional Claude Code skills marketplace 和 skill-creator
+    - 适合作为专项能力参考
+  license: See repository
+  last_checked: "2026-05-05"
+
+- id: voltagent-awesome-agent-skills
+  name: VoltAgent/awesome-agent-skills
+  repo_url: https://github.com/VoltAgent/awesome-agent-skills
+  category: discovery
+  recommendation: reference_only
+  agents:
+    - Claude Code
+    - Codex
+    - Gemini CLI
+    - Cursor
+    - GitHub Copilot
+    - OpenCode
+    - Windsurf
+  install:
+    usage: "这是发现目录，不建议作为一个 skill 安装；按技术栈跳转到原始仓库"
+  best_for:
+    - 按公司或技术栈发现更多官方 skills
+    - 比较不同 agent 的 skill 目录路径
+    - 查找内容创作、设计、数据库、安全、DevOps 等专项 skill
+  avoid_when:
+    - 想直接安装一个经过本仓库筛选的最小集合
+  highlights:
+    - 收录 Anthropic、OpenAI、Vercel、Supabase、Expo、Sentry、Stripe、Cloudflare 等官方或社区 skills
+    - README 提供质量标准和跨工具目录路径
+    - 适合作为二级目录和候选池
+  cautions:
+    - 目录本身不等于审计或背书
+    - 条目多，仍需回到原始 repo 检查安装脚本和维护状态
+  evidence:
+    - README 明确强调 hand-picked、official dev teams 和 community-adopted
+    - 收录范围广，适合发现而非默认安装
+  license: MIT
+  last_checked: "2026-05-05"
