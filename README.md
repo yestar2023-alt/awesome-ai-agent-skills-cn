@@ -15,6 +15,7 @@
 | Supabase / Postgres | [supabase/agent-skills](https://github.com/supabase/agent-skills) | 官方 Supabase 和 Postgres best practices |
 | Expo / React Native | [expo/skills](https://github.com/expo/skills)、[callstackincubator/agent-skills](https://github.com/callstackincubator/agent-skills) | 移动端官方/生态经验 |
 | 营销、SEO、CRO、内容创作 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | SaaS 营销和增长任务覆盖完整 |
+| X/Twitter 内容研究和自动化 | [Xquik-dev/tweetclaw](https://github.com/Xquik-dev/tweetclaw) | 把 tweets、replies、粉丝、媒体、DM、monitor 和 webhook 交给 OpenClaw 审批流程 |
 | 学习怎么写 skill | [openai/skills](https://github.com/openai/skills)、[anthropics/skills](https://github.com/anthropics/skills) | 官方参考、模板和复杂文档 skills |
 
 ## 安全提醒
@@ -248,6 +249,28 @@ Claude Code plugin：
 **亮点：** 内容、SEO、转化率优化、增长工程覆盖完整，很适合技术创始人和技术营销。
 
 **注意：** 输出要结合真实客户研究和品牌语气修订。市场、广告和 SEO 建议都有时效性。
+
+### [Xquik-dev/tweetclaw](https://github.com/Xquik-dev/tweetclaw)
+
+**推荐等级：** `situational`
+
+**适合：** X/Twitter 内容研究、竞品观察、证据收集、搜索 tweets、搜索 replies、用户查询、粉丝导出，以及需要审批的发帖、回复、媒体、DM、monitor、webhook 和抽奖流程。
+
+**安装：**
+
+```bash
+openclaw plugins install npm:@xquik/tweetclaw@1.6.31
+```
+
+Codex skill：
+
+```text
+$skill-installer install https://github.com/Xquik-dev/tweetclaw/tree/master/skills/tweetclaw
+```
+
+**亮点：** 同时提供 OpenClaw plugin 和可单独安装的 agent skill，覆盖 scrape tweets、search tweet replies、post tweets、media upload、direct messages、webhooks 等真实 X/Twitter 工作流。
+
+**注意：** 需要 Xquik API key。涉及社交账号写入或 DM 时，必须放在人工确认或明确授权的 OpenClaw 审批流程里；不适合无人值守批量发布。
 
 ## 官方参考
 
