@@ -332,6 +332,39 @@
   license: MIT
   last_checked: "2026-05-05"
 
+- id: tweetclaw
+  name: Xquik-dev/tweetclaw
+  repo_url: https://github.com/Xquik-dev/tweetclaw
+  category: content
+  recommendation: situational
+  agents:
+    - OpenClaw
+    - Codex
+    - Agents supporting Agent Skills
+  install:
+    openclaw: "openclaw plugins install npm:@xquik/tweetclaw@1.6.31"
+    codex: "$skill-installer install https://github.com/Xquik-dev/tweetclaw/tree/master/skills/tweetclaw"
+  best_for:
+    - X/Twitter 内容研究、竞品观察和证据收集
+    - 搜索 tweets、搜索 replies、用户查询、粉丝导出和媒体资料整理
+    - 需要在审批后执行发帖、回复、媒体、DM、monitor、webhook 或抽奖流程
+  avoid_when:
+    - 只需要普通文案 brainstorming
+    - 没有 Xquik API key 或不想配置 OpenClaw 插件审批
+    - 想让 agent 无人值守批量发布或私信
+  highlights:
+    - 同时提供 OpenClaw plugin 和可单独安装的 agent skill
+    - 覆盖 scrape tweets、search tweet replies、post tweets、media upload、direct messages、webhooks 等 X/Twitter 工作流
+    - README 和 docs 明确区分读操作、写操作和审批边界
+  cautions:
+    - 涉及社交账号动作，安装前要检查 plugin permissions 和审批流程
+    - 写入类动作必须放在人工确认或明确授权的流程里
+  evidence:
+    - README 提供 OpenClaw、Codex skill、MCP 和 agent workflow 安装说明
+    - 仓库包含打包校验脚本、OpenClaw fitness 检查和 bundled SKILL.md
+  license: MIT
+  last_checked: "2026-06-11"
+
 - id: openai-skills
   name: openai/skills
   repo_url: https://github.com/openai/skills
