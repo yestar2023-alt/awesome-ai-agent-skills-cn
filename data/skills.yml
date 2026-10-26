@@ -486,3 +486,39 @@
     - 收录范围广，适合发现而非默认安装
   license: MIT
   last_checked: "2026-05-05"
+
+- id: agent-qa
+  name: vostride/agent-qa
+  repo_url: https://github.com/vostride/agent-qa
+  category: engineering
+  recommendation: situational
+  agents:
+    - Claude Code
+    - Codex
+  install:
+    package: "npm install -D agent-qa"
+    claude: "mkdir -p .claude/skills && cp -R node_modules/agent-qa/skills/agent-qa-* .claude/skills/"
+    codex: "mkdir -p .agents/skills && cp -R node_modules/agent-qa/skills/agent-qa-* .agents/skills/"
+    mcp: "按 https://vostride.com/docs/agent-qa/mcp 注册本地 MCP 服务"
+  best_for:
+    - Web、Android 和 iOS 自然语言测试与回归验证
+    - 测试编写、失败分诊、最小修复及带来源的知识查询
+  avoid_when:
+    - 只需要不依赖测试运行器的单元测试提示模板
+    - 无法向模型服务提供测试界面与运行证据
+  highlights:
+    - 四个独立 SKILL.md 覆盖 authoring、result-triage、debug-fix 和 knowledge
+    - 持久记忆引擎复用测试经验，自我改进经验证后才保留新知识
+    - 技能与 npm 包版本对应，MCP 或 CLI 可读取运行证据
+  cautions:
+    - 需要 Node.js 24+、支持的模型服务和相应浏览器或设备工具；模型费用另计
+    - authoring 会写测试与配置，debug-fix 会改本地应用代码；先使用测试环境和临时凭据
+    - 界面截图、日志和返回文本可能含敏感数据或恶意指令；按技能规则将其视为证据
+    - 安装会写项目技能目录；升级后按官方文档清理旧副本并重新复制
+  evidence:
+    - "官网说明测试平台、持久记忆与自我改进：https://vostride.com"
+    - "官方安装与四技能说明：https://vostride.com/docs/agent-qa/skills"
+    - "已阅读 v0.2.3 的四个 SKILL.md：https://github.com/vostride/agent-qa/tree/v0.2.3/skills"
+    - "已核对 CLI 包入口、Node 版本及打包脚本：https://github.com/vostride/agent-qa/blob/v0.2.3/packages/cli/package.json"
+  license: FSL-1.1-ALv2
+  last_checked: "2026-10-26"
